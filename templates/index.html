@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    {%load static%}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="mainscreen">
+        <div class="card">
+            <div class="leftside">
+                <img src='https://www.cardup.co/hs-fs/hubfs/3-Enjoy-card-benefits.gif?width=1200&height=1200&name=3-Enjoy-card-benefits.gif' class="product" alt="#" />
+            </div>
+            <div class="rightside">
+                <form method="POST" action="/payment">
+                    {%csrf_token%}
+                    <h1>CheckOut</h1>
+                    <p>To : <strong>Spark Foundation</strong></p>
+
+                    <h2>Payment Information</h2>
+                    <p>Client Name</p>
+                    <input type="text" class="inputbox" name="name" required />
+                    <p>Email</p>
+                    <input type="email" class="inputbox" name="email" required />
+                    <div class="expcvv">
+                        <p class="expcvv_text2">INR</p>
+                        <input type="number" class="inputbox"  name="amount" id="amount" required>
+                    </div>
+                    <p></p>
+                    <button  type="submit"  class="button">Donate</button>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
